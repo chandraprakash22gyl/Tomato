@@ -12,9 +12,17 @@ import orderRouter from "./routes/orderRoute.js"
 const app = express()
 const port = process.env.PORT || 4000;
 
+const allowedOrigins = ['https://food-del-frontend-pe9v.onrender.com'];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true, // if using cookies or tokens in headers
+}))
+
+
 // middleware
 app.use(express.json())
-app.use(cors())
+//app.use(cors())
 
 // db connection
 connectDB();
