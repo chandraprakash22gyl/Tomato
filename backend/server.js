@@ -23,6 +23,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,  // if you need cookies/auth
 }));
+app.options('*', cors());
 
 
 // middleware
